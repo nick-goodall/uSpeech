@@ -1,5 +1,5 @@
 /*
- uspeech v.4.x.x
+ uspeech v.5.x.x
  2012-2014 Arjo Chakravarty
  
  uspeech is a library that allows sounds to be classified into certain phonemes
@@ -110,8 +110,9 @@ class UMatrix{
 		int matrix[9];
 		unsigned char dim;
 		void dot(UMatrix m);
-		UMatrix& add(UMatrix m);
-		UMatrix& mul(UMatrix m);
+		UMatrix& add(UMatrix &m);
+		UMatrix& mul(UMatrix &m);
+		UMatrix& sigmoid(UMatrix &m);
 }
 /**
  *  LSTM for word recognition
@@ -119,7 +120,12 @@ class UMatrix{
  class LSTM {
  public:
  	LSTM()
- 	int step(){
+ 	UMatrix& step(UMatrix& input){
+ 		UMatrix Output,i_t;
+ 		
  	}
+ private:
+ 	UMatrix W_i, W_f, W_c, W_o,U_i, U_f, U_c, U_o, V_o, B_i, B_f, B_c, B_o, H_t;
+ 	
  }
 #endif
