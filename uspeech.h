@@ -105,6 +105,21 @@ private:
 	char currPeak, expectSp;
 	unsigned long lastTime;
 };
-//TODO: implement statistics classes.
-
+class UMatrix{
+	public:
+		int matrix[9];
+		unsigned char dim;
+		void dot(UMatrix m);
+		UMatrix& add(UMatrix m);
+		UMatrix& mul(UMatrix m);
+}
+/**
+ *  LSTM for word recognition
+ */
+ class LSTM {
+ public:
+ 	LSTM()
+ 	int step(){
+ 	}
+ }
 #endif
