@@ -1,7 +1,7 @@
 /*
- uspeech v.4.x.x
+ uspeech v.4.0.1
  2012-2014 Arjo Chakravarty
- 
+
  uspeech is a library that allows sounds to be classified into certain phonemes
  on the Arduino. This creates a simple beginning for a full scale voice recognition
  program.
@@ -10,9 +10,13 @@
 #define uspeech_h
 
 #define ARDUINO_ENVIRONMENT 1
+
+#if !defined(SPARK)
 #if ARDUINO_ENVIRONMENT > 0
     #include "Arduino.h"
 #endif
+#endif
+
 #ifdef PICKLE
 #include <string.h>
 #endif
@@ -72,7 +76,7 @@ public:
     int _mean();
     int stdev();
     void collect(int x);
- 
+
 };
 
 
@@ -88,12 +92,12 @@ public:
 	int plosiveCount; /*< Counts the number of plosives*/
     syllable(); /*!< Constructor for the class*/
     void reset(); /*!< Resets the accumulator so a new syllable can be formed. Call this when you detect silence*/
-    void classify(char c); 
+    void classify(char c);
     int* tointptr(); /*!< Returns the vector from the accumulators as an integer pointer */
-    #if ARDUINO_ENVIRONMENT > 0 
+    #if ARDUINO_ENVIRONMENT > 0
     void debugPrint(); /*!< Outputs the datain the accumulator vector. Only enabled for arduino.*/
 	void distance(syllable s);
-	
+
     #endif
     #ifdef PICKLE
     	void dePickle(char* string);
