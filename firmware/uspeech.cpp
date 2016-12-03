@@ -1,8 +1,11 @@
 #include "uspeech.h"
+#if defined(SPARK)
+	#include "math.h"
+#endif
 
 
 /**
- * Constructor 
+ * Constructor
  */
 signal::signal(int port){
 	pin = port;
@@ -16,10 +19,10 @@ signal::signal(int port){
     scale = 1;
 }
 /**
- * Calibration of background based on averaging 
+ * Calibration of background based on averaging
  */
 void signal::calibrate(){
-#ifdef ARDUINO_ENVIRONMENT 
+#ifdef ARDUINO_ENVIRONMENT
     calib = 0;
     uint32_t samp=0;
     for (uint16_t ind=0; ind<10000; ind++) {
@@ -40,7 +43,7 @@ void signal::sample(){
 #endif
 		i++;
 	}
-	
+
 }
 /**
  * An estimate of background noise

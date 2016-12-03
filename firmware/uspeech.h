@@ -13,6 +13,7 @@
 
 #if defined(SPARK)
 	#include "application.h"
+	#define sq(x) ((x)*(x))
 #else
 #if ARDUINO_ENVIRONMENT > 0
     #include "Arduino.h"
