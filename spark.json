@@ -1,7 +1,7 @@
 {   
     "name": "uSpeech",
-    "version": "0.0.1",
-    "author": "Someone <email@somesite.com>",
+    "version": "4.0.1",
+    "author": "Arjo Chakravarty <arjo129@gmail.com>",
     "license": "Choose a license",
-    "description": "Briefly describe this library"
+    "description": "The uSpeech library provides an interface for voice recognition using the Arduino. It currently produces phonemes, often the library will produce junk phonemes."
 }
