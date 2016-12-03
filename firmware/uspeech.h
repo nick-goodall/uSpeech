@@ -11,7 +11,9 @@
 
 #define ARDUINO_ENVIRONMENT 1
 
-#if !defined(SPARK)
+#if defined(SPARK)
+	#include "application.h"
+#else
 #if ARDUINO_ENVIRONMENT > 0
     #include "Arduino.h"
 #endif
